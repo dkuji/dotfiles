@@ -18,7 +18,7 @@ DOT_FILES=(
 
 for file in ${DOT_FILES[@]}
 do
-    ln -s $HOME/dotfiles/$file $HOME/$file
+    ln -sf $HOME/dotfiles/$file $HOME/$file
 done
 
 # change shell
