@@ -20,7 +20,7 @@ do
     ln -sf $HOME/dotfiles/$file $HOME/$file
 done
 
-if [ ! -e $HOME/.gitconfig ] :then
+if [ ! -e $HOME/.gitconfig ]; then
     ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
 fi
 
