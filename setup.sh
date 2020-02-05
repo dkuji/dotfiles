@@ -13,13 +13,16 @@ DOT_FILES=(
     .zshrc
     .zpreztorc
     .zprezto
-    .gitconfig 
 )
 
 for file in ${DOT_FILES[@]}
 do
     ln -sf $HOME/dotfiles/$file $HOME/$file
 done
+
+if [ ! -e $HOME/.gitconfig ] :then
+    ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+fi
 
 # change shell
 chsh -s $(which zsh)
