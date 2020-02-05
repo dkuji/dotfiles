@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # add submodule
 git submodule update --init --recursive
