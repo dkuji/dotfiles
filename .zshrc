@@ -52,3 +52,6 @@ alias d-c="docker-compose"
 alias dp="docker ps"
 alias dpa="docker ps -a "
 alias di="docker images"
+
+# hub
+eval "$(hub alias -s)"
