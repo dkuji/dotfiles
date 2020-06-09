@@ -32,9 +32,9 @@ compinit
 #fi
 
 # for pyenv
-eval "$(pyenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
@@ -58,3 +58,8 @@ alias di="docker images"
 
 # hub
 eval "$(hub alias -s)"
+
+# include files
+if [ -f ~/.env-dotfiles ]; then
+  source ~/.env-dotfiles
+fi
