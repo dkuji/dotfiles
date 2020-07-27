@@ -26,3 +26,6 @@ fi
 
 # change shell
 chsh -s $(which zsh)
+
+# tfenv
+[ -d ~/.tfenv ] && git clone https://github.com/tfutils/tfenv.git ~/.tfenv

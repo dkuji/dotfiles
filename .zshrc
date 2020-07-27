@@ -40,6 +40,7 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # for pipenv
 eval "$(pipenv --completion)"
+export PIPENV_VENV_IN_PROJECT=true
 
 # for direnv
 eval "$(direnv hook zsh)"
@@ -72,3 +73,6 @@ if [ -f '/Users/kujid75/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/k
 
 # molecule
 eval "$(_MOLECULE_COMPLETE=source molecule)"
+
+# tfenv
+export PATH="$HOME/.tfenv/bin:$PATH"
