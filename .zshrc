@@ -40,6 +40,7 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # for pipenv
 eval "$(pipenv --completion)"
+export PIPENV_VENV_IN_PROJECT=true
 
 # for direnv
 eval "$(direnv hook zsh)"
@@ -55,6 +56,7 @@ alias d-c="docker-compose"
 alias dp="docker ps"
 alias dpa="docker ps -a "
 alias di="docker images"
+alias tp="terraform plan"
 
 # hub
 eval "$(hub alias -s)"
@@ -75,3 +77,6 @@ eval "$(_MOLECULE_COMPLETE=source molecule)"
 
 # tfenv
 export PATH="$HOME/.tfenv/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/dkuji/.tfenv/versions/0.12.29/terraform terraform

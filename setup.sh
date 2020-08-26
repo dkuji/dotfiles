@@ -1,5 +1,5 @@
 #!/bin/zsh
-#set -x
+set -x
 
 # add submodule
 git submodule update --init --recursive
@@ -73,10 +73,41 @@ pip3 show pipenv || sudo pip3 install pipenv
 
 # install gcloud
 command -v gcloud || \
-( cd /tmp/ && \
-  curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-304.0.0-darwin-x86_64.tar.gz && \
-  tar xvzf google-cloud-sdk-304.0.0-darwin-x86_64.tar.gz && \
+( 
+  cd /tmp/ && 
+  curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-304.0.0-darwin-x86_64.tar.gz &&
+  tar xvzf google-cloud-sdk-304.0.0-darwin-x86_64.tar.gz &&
   ./google-cloud-sdk/install.sh
 )
 
 # install aws-cli
+if [ ! -h /usr/local/bin/aws ]; then
+cat <<EOF > /tmp/choices.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <array>
+    <dict>
+      <key>choiceAttribute</key>
+      <string>customLocation</string>
+      <key>attributeSetting</key>
+      <string>${HOME}</string>
+      <key>choiceIdentifier</key>
+      <string>default</string>
+    </dict>
+  </array>
+</plist>
+EOF
+  ( 
+    cd /tmp/ &&
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" &&
+    installer -pkg AWSCLIV2.pkg \
+              -target CurrentUserHomeDirectory \
+              -applyChoiceChangesXML choices.xml
+  ) 
+fi
+[ -h /usr/local/bin/aws ] || sudo ln -s ~/aws-cli/aws /usr/local/bin/aws 
+[ -h /usr/local/bin/aws_completer ] || sudo ln -s ~/aws-cli/aws_completer /usr/local/bin/aws_completer 
+
+# install tfenv
+[ -d ~/.tfenv ] || git clone https://github.com/tfutils/tfenv.git ~/.tfenv
