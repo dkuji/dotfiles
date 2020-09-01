@@ -45,7 +45,8 @@ brew cask install  \
   slack \
   visual-studio-code \
   zoomus \
-  deepl
+  deepl \
+  macs-fan-control
 
 # vscode
 vscode_extensions=(
