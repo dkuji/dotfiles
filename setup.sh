@@ -34,7 +34,8 @@ fi
 
 # brew install
 brew install \
-  direnv
+  direnv \
+  postgresql
 
 brew cask install  \
   alfred \
