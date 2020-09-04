@@ -57,6 +57,9 @@ alias dp="docker ps"
 alias dpa="docker ps -a "
 alias di="docker images"
 alias tp="terraform plan"
+alias ta="terraform apply"
+alias ti="terraform init"
+alias ts="terraform state"
 
 # hub
 eval "$(hub alias -s)"
@@ -66,12 +69,6 @@ if [ -f ~/.env-dotfiles ]; then
   source ~/.env-dotfiles
 fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
-
 # molecule
 eval "$(_MOLECULE_COMPLETE=source molecule)"
 
@@ -80,3 +77,9 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /home/dkuji/.tfenv/versions/0.12.29/terraform terraform
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/private/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/private/tmp/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/private/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/private/tmp/google-cloud-sdk/completion.zsh.inc'; fi
