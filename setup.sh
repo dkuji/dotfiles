@@ -32,6 +32,11 @@ else
   chsh -s $(which zsh)
 fi
 
+# screen shot 
+mkdir ~/screenshot
+defaults write com.apple.screencapture name "ScreenShot"
+defaults write com.apple.screencapture location ~/screenshot/;killall SystemUIServer
+
 # brew install
 brew install \
   direnv \
