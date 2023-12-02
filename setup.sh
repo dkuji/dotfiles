@@ -18,7 +18,7 @@ DOT_FILES=(
 
 for file in ${DOT_FILES[@]}
 do
-  [ ! -h $HOME/$file ] || ln -sf $HOME/dotfiles/$file $HOME/$file
+  [ ! -h $HOME/$file ] && ln -sf $HOME/dotfiles/$file $HOME/$file
 done
 
 if [ ! -h $HOME/.gitconfig ]; then

@@ -39,7 +39,7 @@ eval "$(pyenv init -)"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # for pipenv
-eval "$(pipenv --completion)"
+# eval "$(pipenv --completion)"
 export PIPENV_VENV_IN_PROJECT=true
 
 # for direnv
@@ -62,7 +62,7 @@ alias ti="terraform init"
 alias ts="terraform state"
 
 # hub
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 
 # include files
 if [ -f ~/.env-dotfiles ]; then
@@ -70,7 +70,7 @@ if [ -f ~/.env-dotfiles ]; then
 fi
 
 # molecule
-eval "$(_MOLECULE_COMPLETE=source molecule)"
+# eval "$(_MOLECULE_COMPLETE=source molecule)"
 
 # tfenv
 export PATH="$HOME/.tfenv/bin:$PATH"
