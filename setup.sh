@@ -81,7 +81,7 @@ pip3 show pipenv || sudo pip3 install pipenv
 # install gcloud
 command -v gcloud || \
 ( 
-  cd /tmp/ && 
+  cd ~/ && 
   curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-304.0.0-darwin-x86_64.tar.gz &&
   tar xvzf google-cloud-sdk-304.0.0-darwin-x86_64.tar.gz &&
   ./google-cloud-sdk/install.sh
