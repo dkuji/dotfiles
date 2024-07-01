@@ -42,7 +42,7 @@ brew install \
   direnv \
   postgresql
 
-brew cask install  \
+brew install --cask \
   alfred \
   docker \
   google-chrome \
