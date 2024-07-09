@@ -40,7 +40,8 @@ defaults write com.apple.screencapture location ~/screenshot/;killall SystemUISe
 # brew install
 brew install \
   direnv \
-  postgresql
+  postgresql \
+  jq
 
 brew install --cask \
   alfred \
