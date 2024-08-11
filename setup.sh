@@ -38,6 +38,8 @@ defaults write com.apple.screencapture name "ScreenShot"
 defaults write com.apple.screencapture location ~/screenshot/;killall SystemUIServer
 
 # brew install
+which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 brew install \
   direnv \
   postgresql \
@@ -51,7 +53,7 @@ brew install --cask \
   iterm2 \
   slack \
   visual-studio-code \
-  zoomus \
+  zoom \
   deepl \
   macs-fan-control
 
