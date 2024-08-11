@@ -87,3 +87,5 @@ if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then . ~/google-cloud-sdk/compl
 # aws
 complete -C '/usr/local/bin/aws_completer' aws
 
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
