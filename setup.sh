@@ -123,3 +123,7 @@ fi
 
 # install tfenv
 [ -d ~/.tfenv ] || git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+
+# set tool bar icon position
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 6
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 6
