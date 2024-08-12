@@ -38,37 +38,39 @@ defaults write com.apple.screencapture name "ScreenShot"
 defaults write com.apple.screencapture location ~/screenshot/;killall SystemUIServer
 
 # brew install
-which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! which brew > /dev/null 2>&1 ; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install \
-  direnv \
-  postgresql \
-  jq
-
-brew install --cask \
-  alfred \
-  docker \
-  google-chrome \
-  google-japanese-ime \
-  iterm2 \
-  slack \
-  visual-studio-code \
-  zoom \
-  deepl \
-  macs-fan-control
+  brew install \
+    direnv \
+    postgresql \
+    jq
+  
+  brew install --cask \
+    alfred \
+    docker \
+    google-chrome \
+    google-japanese-ime \
+    iterm2 \
+    slack \
+    visual-studio-code \
+    zoom \
+    deepl \
+    macs-fan-control
+fi
 
 # vscode
-vscode_extensions=(
-  tabnine.tabnine-vscode
-  ms-python.python
-  alefragnani.project-manager
-  vscodevim.vim
-  redhat.vscode-yaml
-)
-for e in ${vscode_extensions[@]}
-do
-  code --install-extension $e
-done
+# vscode_extensions=(
+#   tabnine.tabnine-vscode
+#   ms-python.python
+#   alefragnani.project-manager
+#   vscodevim.vim
+#   redhat.vscode-yaml
+# )
+# for e in ${vscode_extensions[@]}
+# do
+#   code --install-extension $e
+# done
 
 # install pyenv
 if [ ! -d ~/.pyenv ]; then
