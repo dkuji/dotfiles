@@ -38,7 +38,7 @@ defaults write com.apple.screencapture name "ScreenShot"
 defaults write com.apple.screencapture location ~/screenshot/;killall SystemUIServer
 
 # brew install
-if ! which brew > /dev/null 2>&1 ; then
+if ! test -e /opt/homebrew/bin/brew ; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   brew install \
